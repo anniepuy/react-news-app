@@ -2,28 +2,12 @@
 Project: React news app
 Author: Ann Hagan
 Date: 2025-05-24
-File: header.jsx
-Purpose: Header component imported into main.jsx.
+File: nav.jsx
+Purpose: Resuable smaller component just for the nav bar.
 */
 
-
-
-const Header = () => {
-
-    const handleInputChange = () => {
-        console.log(event);
-
-    }
-   
-    return(
-        <header>
-            <div className = "logo">
-                Custom News
-            </div>
-            <input 
-                onChange={handleInputChange}
-            />
-        <nav className="mainNav">
+const Nav = () => (
+    <nav className="mainNav">
             <ul>
                 <li className="navItem">
                     <a href="#">Home</a>
@@ -42,8 +26,6 @@ const Header = () => {
                 </li>
             </ul>
         </nav>
-        </header>
-    )
-}
+)
 
-export default Header;
+export default Nav;

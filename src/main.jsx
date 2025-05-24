@@ -7,7 +7,7 @@ Purpose: Practice React and Vite since I don't get to use this at work (*sigh*).
 
 import React from 'react'
 import {createRoot} from 'react-dom/client'
-import Header from './components/header.jsx'
+import Header from './components/header/header.jsx'
 import './styles/styles.css'
 
 const App = () => (
