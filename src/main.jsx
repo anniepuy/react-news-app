@@ -6,20 +6,17 @@ Purpose: Practice React and Vite since I don't get to use this at work (*sigh*).
 */
 
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import {createRoot} from 'react-dom/client'
+import Header from './components/header.jsx'
+import './styles/styles.css'
 
-const App = () => {
-  return (
-    <div>
-      <h1>Hello, world!</h1>
-      <p>This is a simple React app.</p>
-    </div>
-  )
-}
+const App = () => (
+    <>
+        <Header />
+    </>
+)
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+
+createRoot(document.getElementById('root')).render(
     <App />
-  </React.StrictMode>
 )
