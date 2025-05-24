@@ -6,16 +6,10 @@ File: nav.jsx
 Purpose: Resuable smaller component just for the nav bar using map to loop through the array list.
 */
 
+import { navItems } from "../../utils/data";    
+
 const Nav = () => {
 
-    const navItems = [
-        { id: "1", link:'/home', title: 'Home' },
-        { id: "2", link:'/articles', title: 'Articles' },
-        { id: "3", link:'/sports', title: 'Sports' },
-        { id: "4", link:'/music', title: 'Music' },
-        { id: "5", link:'/art', title: 'Art' },
-    ]
-   
    return( 
     <nav className="mainNav">
             <ul>
