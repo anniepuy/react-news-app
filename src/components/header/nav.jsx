@@ -3,29 +3,30 @@ Project: React news app
 Author: Ann Hagan
 Date: 2025-05-24
 File: nav.jsx
-Purpose: Resuable smaller component just for the nav bar.
+Purpose: Resuable smaller component just for the nav bar using map to loop through the array list.
 */
 
-const Nav = () => (
+const Nav = () => {
+
+    const navItems = [
+        { id: "1", link:'/home', title: 'Home' },
+        { id: "2", link:'/articles', title: 'Articles' },
+        { id: "3", link:'/sports', title: 'Sports' },
+        { id: "4", link:'/music', title: 'Music' },
+        { id: "5", link:'/art', title: 'Art' },
+    ]
+   
+   return( 
     <nav className="mainNav">
             <ul>
-                <li className="navItem">
-                    <a href="#">Home</a>
-                </li>
-                <li className="navItem">
-                    <a href="#">World</a>
-                </li>
-                <li className="navItem">
-                    <a href="#">Politics</a>
-                </li>
-                <li className="navItem">
-                    <a href="#">Business</a>
-                </li>
-                <li className="navItem">
-                    <a href="#">Technology</a>
-                </li>
+                {navItems.map((item) => (
+                    <li className="navItem" key={item.id}>
+                    <a href="{item.link}">{item.title}</a>
+                    </li>
+                ))}
             </ul>
         </nav>
-)
+    )
+}
 
 export default Nav;
