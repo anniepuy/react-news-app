@@ -6,11 +6,12 @@ File: header.jsx
 Purpose: Header component imported into main.jsx.
 */
 
-
+import Nav from './nav.jsx';
+import Navigation from './nav.jsx';
 
 const Header = () => {
 
-    const handleInputChange = () => {
+    const handleInputChange = (event) => {
         console.log(event);
 
     }
@@ -23,7 +24,7 @@ const Header = () => {
             <input 
                 onChange={handleInputChange}
             />
-        
+        <Navigation />
         </header>
     )
 }
