@@ -8,11 +8,15 @@ Purpose: Header component imported into main.jsx.
 
 import Nav from './nav.jsx';
 import Navigation from './nav.jsx';
+import { useState } from 'react';
 
 const Header = () => {
 
+    const [keywords, setKeywords] = useState('');
+
+
     const handleInputChange = (event) => {
-        console.log(event);
+        setKeywords(event.target.value);
 
     }
    
@@ -24,6 +28,7 @@ const Header = () => {
             <input 
                 onChange={handleInputChange}
             />
+            The keywords are : {keywords}
         <Navigation />
         </header>
     )
