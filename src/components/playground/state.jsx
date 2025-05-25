@@ -9,20 +9,30 @@ useState is a hook that allows you to add state to a functional component. It re
 import { useState } from "react";
 
 const StatePlayground = () => {
+    const initialCount = 0;
 
-    let [count, setCount] = useState(0); 
+    let [count, setCount] = useState(initialCount); 
 
-    const addOne = () => {
-        setCount(count + 1);
+    //const addOne = () => {
+        //setCount(count + 1);
+    //}
+    const subTractOne = () => {
+        setCount(prevCount => {
+            return prevCount - 1;
+        })
     }
 
-    console.log(count);
+    const resetCount = () => {
+        setCount(initialCount);
+    }
 
     // This is a playground for state management in React
     return (
         <>
             <h3>Count:{count} </h3>
-            <button onClick={{addOne}}>Add one itme</button>
+            <button onClick={() => setCount(count+1)}>Add one itme</button>
+            <button onClick={{subTractOne}}>Remove one</button>
+            <button onClick={{resetCount}}>Reset</button>
 
         </>
     )
