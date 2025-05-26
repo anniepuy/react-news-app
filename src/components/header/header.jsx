@@ -11,11 +11,12 @@ import Navigation from './nav.jsx';
 import { useState } from 'react';
 
 const Header = () => {
-
+    const [active, setActive] = useState(false)
     const [keywords, setKeywords] = useState('');
 
-
     const handleInputChange = (event) => {
+        const value = event.target.value === '' ? 'active':'not-active';
+        setActive(value)
         setKeywords(event.target.value);
 
     }
@@ -25,11 +26,13 @@ const Header = () => {
             <div className = "logo">
                 Custom News
             </div>
-            <input 
+            <input className = {active ? 'active' : 'not-active'}
                 onChange={handleInputChange}
+                type="text"
+                placeholder="Search for news"
             />
             The keywords are : {keywords}
-        <Navigation />
+            <Navigation />
         </header>
     )
 }

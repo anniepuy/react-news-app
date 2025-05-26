@@ -9,12 +9,14 @@ Purpose: using props to pass static file data from main.jsx to child component.
 const NewsItem = (props) => {
     <>
         return (
-            <div key={props.id}>
-                <h3>{props.title}</h3>
+            
+            <div className = "news_item" key={props.item.id}>
+                <h3>{props.item.title}</h3>
                 <div>
-                    {props.feed}
+                    {props.item.feed}
                 </div>
             </div>
+           
         )   
     </>
 }

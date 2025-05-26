@@ -24,7 +24,7 @@ header input{
     font-family: 'Roboto', sans-serif;
     color: #333;
     font-size: 1.2rem;
-    margin: o auto;
+    margin: 0 auto;
     padding: 10px;
     border-radius: 0.2rem;
     background-color: rgb(255, 255, 255);
@@ -75,4 +75,10 @@ nav {
     padding: 20px;
     box-sizing: border-box;
     border-bottom: 1px solid grey;
+}
+
+.active {
+    outline: none;
+    border: 3px solid red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
