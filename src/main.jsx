@@ -20,13 +20,14 @@ const App = () => {
     let [news, setNews] = useState(newsData);
 
     const getKeywords = (event) => {
-        let keywords = event.target.value;
-        let filtered = newsData.filter((item)=>{
-            return item.title.indexOf(keywords) > -1
+        const keywords = event.target.value.toLowerCase();
+        const filtered = newsData.filter((item) => {
+            return (
+                item.title.toLowerCase().includes(keywords) ||
+                item.feed.toLowerCase().includes(keywords)
+            );
         });
-
         setNews(filtered);
-        
     }
 
     console.log(newsData);
