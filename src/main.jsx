@@ -9,15 +9,27 @@ import React from 'react'
 import {createRoot} from 'react-dom/client'
 import Header from './components/header/header.jsx'
 import './styles/styles.css'
+import { newsData } from './utils/data.js'
+import { useState } from 'react'
+import NewsList from './components/news_list.jsx'
+
 //import StatePlayground from './components/playground/state.jsx'
 
-const App = () => (
-    <>
-        <Header />
-        
-        
-    </>
-)
+const App = () => {
+
+    let [news, setNews] = useState(newsData);
+
+    console.log(newsData);
+    return(
+            <>
+                <Header />
+                <div className="container">
+                    <NewsList news = {news}/>
+                </div>
+
+            </>
+    )
+}
 
 
 createRoot(document.getElementById('root')).render(
