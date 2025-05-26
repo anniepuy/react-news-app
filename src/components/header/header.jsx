@@ -10,7 +10,7 @@ import Nav from './nav.jsx';
 import Navigation from './nav.jsx';
 import { useState } from 'react';
 
-const Header = () => {
+const Header = (props) => {
     const [active, setActive] = useState(false)
     const [keywords, setKeywords] = useState('');
 
@@ -27,9 +27,7 @@ const Header = () => {
                 Custom News
             </div>
             <input className = {active ? 'active' : 'not-active'}
-                onChange={handleInputChange}
-                type="text"
-                placeholder="Search for news"
+                onChange={props.getKeywords}
             />
             The keywords are : {keywords}
             <Navigation />
